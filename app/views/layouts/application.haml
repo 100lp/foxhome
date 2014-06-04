@@ -6,4 +6,37 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    
+
+
+  %body
+
+    %header
+      %aside
+        .centered
+          = render 'layouts/logo'
+          = render 'layouts/telefon'
+      .border
+      %nav
+        = render 'layouts/nav'
+    #content
+      = content_for?(:application_layout) ? yield(:application_layout)  : yield
+    %footer
+      %nav
+        - if @current_page.include? "mebel" and @current_page.exclude? "kitchen"
+          = render 'layouts/footer_mebel_nav'
+        - elsif @current_page.include? "kitchen"
+          = render 'layouts/footer_kitchen_nav'
+        - elsif @current_page.include? "article"
+          = render 'layouts/footer_article_nav'
+        - else
+          = render 'layouts/footer_nav'
+      .border
+      %aside
+        .centered
+          %p
+            Bismarck © 2014 Все права защищены
+          %p
+            Design by Artyom Malakhow
+
+       = yield

@@ -5,6 +5,8 @@ gem 'rails', '4.1.1'
 
 gem 'sqlite3'
 
+gem 'pg'
+
 gem 'haml'
 
 gem 'sass-rails', '~> 4.0.3'
