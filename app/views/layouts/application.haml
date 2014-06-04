@@ -5,5 +5,38 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
   %body
-    = yield
+
+    %header
+      #logo
+        = image_tag 'logo.png'
+      %aside
+        #info
+          .title
+            Арт-Повар
+            %br
+            художник
+            %br
+            Надежда Ильина
+          .soc-icons
+            .vk
+              vk
+            .fb
+              fb
+        %nav
+          = render 'layouts/nav'
+
+    #content
+      = yield
+
+    %footer
+      %nav
+        footer nav
+      .border
+      %aside
+        .centered
+          %p
+            Artpovar © 2014 Все права защищены
+          %p
+            Design by Nadezhda
