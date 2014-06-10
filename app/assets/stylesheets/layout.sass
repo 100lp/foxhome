@@ -1,8 +1,9 @@
 body
   padding: 0
   margin: 0
-  background: #0F0A22
+  background: url(image_path("background.png")) center 130px no-repeat #0F0A22
   color: white
+  font-family: Arial
 
 ul
   padding: 0
@@ -27,16 +28,17 @@ a
 div
 
 #content
-  padding: 25px
+  padding: 25px 50px
   min-height: 720px
   width: 980px
   margin: 0 auto
 
   .index
-    background: url(image_path("v_sozvezdii.png")) center no-repeat
+    min-height: 700px
 
 header
   width: 980px
+  padding: 50px
   margin: 0 auto
   overflow: hidden
 
@@ -52,14 +54,21 @@ header
 
     #info
       overflow: hidden
-      height: 110px
       box-sizing: border-box
-      padding-top: 30px
 
       .title
         text-align: center
         float: left
         width: 80%
+        font-size: 18px
+
+        span
+          font-size: 16px
+
+        h1
+          margin: 5px 0 0
+          font-size: 22px
+          font-weight: normal
 
       .soc-icons
         float: right
@@ -78,6 +87,7 @@ header
   nav
     text-align: center
     overflow: hidden
+    margin-top: 14px
 
     ul
       margin: 0
@@ -85,6 +95,7 @@ header
       li
         float: left
         margin: 0 10px
+        font-size: 15px
 
         &.current
           a
@@ -92,8 +103,6 @@ header
             z-index: 1
         a
           color: #EAEAEA
-          font-size: 16.5px
-          padding: 24px 0
 
           &:hover, &:focus
             position: relative
