@@ -29,6 +29,9 @@ header
     min-width: 170px
     background: url(image_path("logo.png")) left no-repeat
 
+    &:hover
+      opacity: 0.9
+
   aside
     float: right
     width: 80%
@@ -110,55 +113,61 @@ section
     width: 20%
     max-width: 160px
 
-    table
-      tr
-        position: relative
+    ul
+      width: 160px
+
+    a
+      height: 80px
+      width: 80px
+      display: block
+      margin-left: 80px
+
+      li
+        display: table-cell
+        vertical-align: middle
         height: 80px
+        padding-left: 10px
+
+      &:before
+        height: 80px
+        width: 90px
+        opacity: 0.7
+        left: 40px
+        position: absolute
+        content: ""
+
+      &:first-child
+        &:before
+          background: url(image_path("new.png"))
+
+      &:nth-child(2)
+        &:before
+          background: url(image_path("ugolki.png"))
+      &:nth-child(3)
+        &:before
+          background: url(image_path("sozvezdie.png"))
+      &:nth-child(4)
+        &:before
+          background: url(image_path("lady.png"))
+      &:last-child
+        &:before
+          background: url(image_path("homo.png"))
+
+      &.current
+        &:before
+          opacity: 1
+        &:link, &:visited
+          color: #739fbe
+
+      &:link, &:visited
+        text-decoration: none
+        color: white
+
+      &:hover, &:focus
+        color: #739fbe
 
         &:before
-          height: 80px
-          width: 80px
-          opacity: 0.8
-          position: absolute
-          content: ""
-
-        &:first-child
-          &:before
-            background: url(image_path("new.png"))
-
-        &:nth-child(2)
-          &:before
-            background: url(image_path("ugolki.png"))
-        &:nth-child(3)
-          &:before
-            background: url(image_path("sozvezdie.png"))
-        &:nth-child(4)
-          &:before
-            background: url(image_path("lady.png"))
-        &:last-child
-          &:before
-            background: url(image_path("homo.png"))
-
-        td
-          vertical-align: middle
-          text-align: left
-          width: 80px
-          padding: 0
-
-          li
-            list-style: none
-            padding-left: 4px
-
-            &.current
-              a, a:link, a:visited
-                color: #739fbe
-
-            a, a:link, a:visited
-              text-decoration: none
-              color: white
-
-              &:hover, &:focus
-                color: #739fbe
+          opacity: 1
 
   #content
     float: right
