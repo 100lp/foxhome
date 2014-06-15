@@ -4,4 +4,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :authenticate_user!
+
+  before_filter :first_try
+
+  def first_try
+  	@products = Product.all
+  end
 end
