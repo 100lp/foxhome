@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root 'pages#index'
 
@@ -7,7 +8,15 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
   get '/pressa', to: 'pages#pressa'
   get '/classes', to: 'pages#classes'
-  get '/news', to: 'pages#news'
+  get '/doings', to: 'pages#doings'
   get '/contact', to: 'pages#contact'
+
+  # left navigation
+  get '/new', to: 'pages#new'
+  get '/ugolki-dushi', to: 'pages#ugolki'
+  get '/sozvezdii-slona', to: 'pages#sozvezdie'
+  get '/ledi', to: 'pages#ledi'
+  get '/homo-insectarium', to: 'pages#homo'
+
 
 end

@@ -7,10 +7,8 @@
     = csrf_meta_tags
 
   %body
-
     %header
-      #logo
-        = image_tag 'logo.png'
+      = link_to '', '/', class: 'logo'
       %aside
         #info
           .title
@@ -22,23 +20,18 @@
             %h1
               Надежда Ильина
           .soc-icons
-            .vk
-              vk
-            .fb
-              fb
+            =link_to '', '#', class: 'fb'
+            =link_to '', '#', class: 'vk'
+            
         %nav
           = render 'layouts/nav'
-
-    #content
-      = yield
+    %section
+      #left_nav
+        = render 'layouts/left_nav'
+      #content
+        = yield
 
     %footer
-      %nav
-        footer nav
-      .border
-      %aside
-        .centered
-          %p
-            Artpovar © 2014 Все права защищены
-          %p
-            Design by Nadezhda
+      %center
+        %p
+          Artpovar © 2014 Все права защищены

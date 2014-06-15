@@ -14,27 +14,6 @@ a
   text-decoration: none
   padding: 0
 
-.centered
-  width: 980px
-  padding: 0 50px
-  margin: 0 auto
-
-.centered.icons
-  padding: 0
-
-.border
-  height: 2px
-
-div
-
-#content
-  padding: 25px 50px
-  min-height: 720px
-  width: 980px
-  margin: 0 auto
-
-  .index
-    min-height: 700px
 
 header
   width: 980px
@@ -42,11 +21,13 @@ header
   margin: 0 auto
   overflow: hidden
 
-  #logo
+  .logo
     float: left
     width: 20%
+    height: 106px
     max-width: 180px
     min-width: 170px
+    background: url(image_path("logo.png")) left no-repeat
 
   aside
     float: right
@@ -61,6 +42,7 @@ header
         float: left
         width: 80%
         font-size: 18px
+        font-family: Myriad Pro
 
         span
           font-size: 16px
@@ -69,6 +51,7 @@ header
           margin: 5px 0 0
           font-size: 22px
           font-weight: normal
+          color: white
 
       .soc-icons
         float: right
@@ -76,18 +59,23 @@ header
         max-width: 150px
 
         .vk, .fb
-          height: 50px
-          width: 50px
+          height: 44px
+          width: 42px
           text-align: center
           display: inline-block
-        .vk
-          background: #6679E6
+
+          &:hover
+            opacity: 0.8
+
         .fb
-          background: #6A8FF3
+          background: url(image_path("icons.png")) right no-repeat
+        .vk
+          background: url(image_path("icons.png")) left no-repeat
+        
   nav
     text-align: center
     overflow: hidden
-    margin-top: 14px
+    margin-top: 25px
 
     ul
       margin: 0
@@ -95,69 +83,100 @@ header
       li
         float: left
         margin: 0 10px
-        font-size: 15px
+        font-size: 14px
 
         &.current
-          a
-            position: relative
-            z-index: 1
-        a
-          color: #EAEAEA
+          a, a:link, a:visited
+            color: #739fbe
+
+        a, a:link, a:visited
+          text-decoration: none
+          color: white
 
           &:hover, &:focus
-            position: relative
-            z-index: 1
+            color: #739fbe
 
-footer
-  background: #5f5e5e
 
-  nav
-    width: 980px
-    padding: 0 50px
-    position: relative
 
-    &:before
-      content: ""
-      position: absolute
-      left: 452px
-      bottom: 46px
-      height: 47px
-      width: 80px
 
-    div
-      text-align: center
-      display: inline-block
-      height: 65px
-      width: 33.3333%
-      padding: 23px 0
+section
+  padding: 25px 50px
+  min-height: 500px
+  width: 980px
+  margin: 0 auto
 
-      &:first-child
-        text-align: left
-      &:last-child
-        text-align: right
-        float: right
-        width: 32%
-      &:nth-child(2)
-        padding: 23px
+  #left_nav
+    float: left
+    width: 20%
+    max-width: 160px
 
-      a
-        color: white
+    table
+      tr
+        position: relative
+        height: 80px
 
-        &:hover
-          color: gray
+        &:before
+          height: 80px
+          width: 80px
+          opacity: 0.8
+          position: absolute
+          content: ""
 
-  aside
-    background: black
-    height: 100px
-
-    .centered
-      color: white
-      padding-top: 10px
-      font-size: 14px
-
-      p
         &:first-child
-          float: left
-        &:last-child
-          float: right
+          &:before
+            background: url(image_path("new.png"))
 
+        &:nth-child(2)
+          &:before
+            background: url(image_path("ugolki.png"))
+        &:nth-child(3)
+          &:before
+            background: url(image_path("sozvezdie.png"))
+        &:nth-child(4)
+          &:before
+            background: url(image_path("lady.png"))
+        &:last-child
+          &:before
+            background: url(image_path("homo.png"))
+
+        td
+          vertical-align: middle
+          text-align: left
+          width: 80px
+          padding: 0
+
+          li
+            list-style: none
+            padding-left: 4px
+
+            &.current
+              a, a:link, a:visited
+                color: #739fbe
+
+            a, a:link, a:visited
+              text-decoration: none
+              color: white
+
+              &:hover, &:focus
+                color: #739fbe
+
+  #content
+    float: right
+    padding: 25px 50px
+    box-sizing: border-box
+    min-height: 500px
+    width: 80%
+    margin: 0 auto
+
+    .index
+
+
+
+.centered
+  width: 980px
+  padding: 0 50px
+  margin: 0 auto
+
+table tr:hover, a:hover
+  &:before
+    opacity: 1

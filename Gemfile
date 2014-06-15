@@ -5,8 +5,6 @@ gem 'rails', '4.1.1'
 
 gem 'devise'
 
-gem 'meta_search',    '>= 1.1.0.pre'
-
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack'
