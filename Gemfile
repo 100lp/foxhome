@@ -6,6 +6,10 @@ gem 'rails', '4.1.1'
 gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin-gallery', github: 'stefanoverna/activeadmin-gallery'
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-extra', :github => 'stefanoverna/activeadmin-extra', :branch => 'master'
+
 gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'formtastic', github: 'justinfrench/formtastic'

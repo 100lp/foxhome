@@ -5,9 +5,5 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  before_filter :first_try
 
-  def first_try
-  	@products = Product.all
-  end
 end

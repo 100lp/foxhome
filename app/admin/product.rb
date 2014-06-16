@@ -13,7 +13,23 @@ ActiveAdmin.register Product do
   #  permitted << :other if resource.something?
   #  permitted
   # end
-  
+
+  form do |f|
+    # ...
+    f.inputs :gallery do
+      f.has_many_images :album_images
+    end
+    # ...
+  end
+
+  form do |f|
+    # ...
+    f.inputs :image do
+      f.has_image :featured_image
+    end
+    # ...
+  end
+
 
 
 end
