@@ -1,35 +1,23 @@
 ActiveAdmin.register Product do
+  permit_params :image, :image_year, :image_name, :image_text
 
-  
-  # See permitted parameters documentation:
-  # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  permit_params :list, :of, :attributes, :on, :model, :image_year, :image_name, :image_text
-  #
-  # or
-  #
-  # permit_params do
-  #  permitted = [:permitted, :attributes]
-  #  permitted << :other if resource.something?
-  #  permitted
-  # end
-
-  form do |f|
-    # ...
-    f.inputs :gallery do
-      f.has_many_images :album_images
+  form html: { multipart: true } do |f|
+    f.inputs "Details", multipart: true do
+      f.input :image, as: :file
+      f.input :image_name
+      f.input :image_text
+      f.input :image_year
     end
-    # ...
+
+    f.actions
   end
 
-  form do |f|
-    # ...
-    f.inputs :image do
-      f.has_image :featured_image
-    end
-    # ...
+  index do
+    column :image
+    column :image_name
+    column :image_text
+    column :image_year
+
+    actions
   end
-
-
-
 end

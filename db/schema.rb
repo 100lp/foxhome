@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140615234919) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20140616115107) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -27,9 +24,9 @@ ActiveRecord::Schema.define(version: 20140615234919) do
     t.datetime "updated_at"
   end
 
-  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
-  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
-  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
+  add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
+  add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
   create_table "active_admin_gallery_images", force: true do |t|
     t.integer "imageable_id"
@@ -49,7 +46,12 @@ ActiveRecord::Schema.define(version: 20140615234919) do
     t.string  "image_size"
   end
 
-  add_index "active_admin_gallery_images", ["imageable_id", "imageable_type", "imageable_relation"], name: "active_admin_gallery_images_imageable", using: :btree
+  add_index "active_admin_gallery_images", ["imageable_id", "imageable_type", "imageable_relation"], name: "active_admin_gallery_images_imageable"
+
+  create_table "alboms", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "products", force: true do |t|
     t.datetime "created_at"
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140615234919) do
     t.string   "image_name"
     t.string   "image_text"
     t.integer  "image_year"
+    t.string   "image"
   end
 
   create_table "users", force: true do |t|
@@ -74,7 +77,7 @@ ActiveRecord::Schema.define(version: 20140615234919) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

@@ -1,0 +1,12 @@
+#blueimp-gallery.blueimp-gallery
+  .slides
+  %h3.title
+  %a.prev ‹
+  %a.next ›
+  %a.close ×
+  %a.play-pause
+  %ol.indicator
+#links.gallery
+  - @products.each do |product|
+    = link_to image_path(product.image) do
+      =image_tag product.image
