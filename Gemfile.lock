@@ -202,6 +202,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick
   pg
   polyamorous!

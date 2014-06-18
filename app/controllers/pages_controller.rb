@@ -1,4 +1,9 @@
 class PagesController < ApplicationController
+  before_filter :images
+
+  def images
+    @products = Product.all
+  end
 
   def index
   end

@@ -5,11 +5,4 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  before_filter :images
-
-  def images
-  	@products = Product.all
-  end
-
-
 end
