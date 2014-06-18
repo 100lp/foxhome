@@ -21,9 +21,8 @@ body
     height: 100%
     top: 0
     left: 0
-    opacity: 0.6
     z-index: -1
-    background: url(image_path("background.png")) center 130px no-repeat
+    background: url(image_path("background.png")) center 150px no-repeat
 ul
   padding: 0
   margin: 0
@@ -35,8 +34,9 @@ a
 
 
 section
-  padding: 25px 50px
-  min-height: 500px
+  padding: 25px 40px
+  box-sizing: border-box
+  min-height: 550px
   width: 980px
   margin: 0 auto
 
@@ -52,13 +52,15 @@ section
       width: 80px
       display: block
       margin-left: 80px
+      margin-bottom: 15px
+      font-size: 12px
       position: relative
 
       li
         display: table-cell
         vertical-align: middle
         height: 80px
-        padding-left: 10px
+        padding-left: 5px
 
       &:before
         height: 80px
@@ -70,20 +72,20 @@ section
 
       &:first-child
         &:before
-          background: url(image_path("new.png"))
+          background: url(image_path("new.png")) no-repeat
 
       &:nth-child(2)
         &:before
-          background: url(image_path("ugolki.png"))
+          background: url(image_path("ugolki.png")) no-repeat
       &:nth-child(3)
         &:before
-          background: url(image_path("sozvezdie.png"))
+          background: url(image_path("sozvezdie.png")) no-repeat
       &:nth-child(4)
         &:before
-          background: url(image_path("lady.png"))
+          background: url(image_path("lady.png")) no-repeat
       &:last-child
         &:before
-          background: url(image_path("homo.png"))
+          background: url(image_path("homo.png")) no-repeat
 
       &.current
         &:before
@@ -105,19 +107,21 @@ section
     float: right
     box-sizing: border-box
     min-height: 500px
-    width: 800px
+    width: 720px
     margin: 0 auto
-    padding: 10px 25px
+    padding: 10px
 
     .index
 
-
+footer
+  padding: 0 40px
+  box-sizing: border-box
+  width: 980px
+  margin: 0 auto
+  font-size: 12px
+  text-align: center
 
 .centered
   width: 980px
   padding: 0 50px
   margin: 0 auto
-
-table tr:hover, a:hover
-  &:before
-    opacity: 1
