@@ -14,7 +14,7 @@ gem 'formtastic', github: 'justinfrench/formtastic'
 
 gem 'kaminari'
 
-gem 'pg'
+gem 'sqlite3'
 
 gem 'rake'
 
