@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.1'
 
+gem 'capistrano', '~> 2'
+
 gem 'devise'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
@@ -11,8 +13,6 @@ gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'formtastic', github: 'justinfrench/formtastic'
 
 gem 'kaminari'
-
-gem 'sqlite3'
 
 gem 'pg'
 

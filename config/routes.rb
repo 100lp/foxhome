@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   get '/new', to: 'pages#new'
   get '/ugolki-dushi', to: 'pages#ugolki'
   get '/sozvezdii-slona', to: 'pages#sozvezdie'
-  get '/ledi', to: 'pages#ledi'
+  get '/lady', to: 'pages#lady'
   get '/homo-insectarium', to: 'pages#homo'
 
 

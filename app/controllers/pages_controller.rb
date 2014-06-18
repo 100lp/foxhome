@@ -33,7 +33,7 @@ class PagesController < ApplicationController
   def sozvezdie
   end
   
-  def ledi
+  def lady
   end
 
   def homo

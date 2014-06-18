@@ -1,1 +1,8 @@
-sozvezdie
+= render 'layouts/gallery_buttons'
+
+#links.gallery
+  - cat = Category.where(name: "sozvezdie").first
+  - gallery = cat.products
+  - gallery.reverse.each do |product|
+    = link_to image_path(product.image) do
+      =image_tag product.image

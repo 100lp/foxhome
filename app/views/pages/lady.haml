@@ -1,7 +1,7 @@
 = render 'layouts/gallery_buttons'
 
 #links.gallery
-  - cat = Category.where(name: "homo").first
+  - cat = Category.where(name: "lady").first
   - gallery = cat.products
   - gallery.reverse.each do |product|
     = link_to image_path(product.image) do
