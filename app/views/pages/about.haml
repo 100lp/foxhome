@@ -1,1 +1,7 @@
-about
+- cat = Category.where(name: "about").first
+- articles = cat.articles
+- articles.reverse.each do |item|
+  %h1
+    =item.title
+  %article
+    =raw item.body

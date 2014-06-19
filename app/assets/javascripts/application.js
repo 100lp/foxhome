@@ -13,3 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require pages
+//= require ckeditor/init
+//= require_tree .

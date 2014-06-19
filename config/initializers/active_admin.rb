@@ -1,7 +1,11 @@
 ActiveAdmin.setup do |config|
+
   config.namespace :admin do |admin|
     admin.allow_comments = false
   end
+  
+  config.register_javascript 'ckeditor/init.js'
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout

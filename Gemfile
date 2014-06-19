@@ -12,6 +12,10 @@ gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
 gem 'ransack', github: 'activerecord-hackery/ransack'
 gem 'formtastic', github: 'justinfrench/formtastic'
 
+gem 'ckeditor'
+
+gem 'non-stupid-digest-assets', '~> 1.0.4'
+
 gem 'kaminari'
 
 gem 'sqlite3'
