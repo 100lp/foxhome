@@ -48,11 +48,6 @@ ActiveRecord::Schema.define(version: 20140619150048) do
 
   add_index "active_admin_gallery_images", ["imageable_id", "imageable_type", "imageable_relation"], name: "active_admin_gallery_images_imageable"
 
-  create_table "alboms", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "articles", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
