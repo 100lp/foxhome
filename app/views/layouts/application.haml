@@ -10,9 +10,9 @@
     %script{src: "/gallery/js/blueimp-gallery.min.js"}
     %script{src: "http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"}
     %link{href: "http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css", rel: "stylesheet"}
-    
 
-  %body
+  - a = ["default", "first", "second"]    
+  %body{class: "#{action_name} #{a.sample}"}
     %header
       = link_to '', '/', class: 'logo'
       %aside
