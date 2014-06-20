@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
-  before_filter :images
+  before_filter :help
 
-  def images
+  def help
+    @current_page = request.env['PATH_INFO']
     @products = Product.all
+    @body_bg = ["default", "first", "second"]
   end
 
   def index

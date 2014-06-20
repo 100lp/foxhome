@@ -1,3 +1,7 @@
+- content_for :left_nav do 
+  #left_nav
+    = render 'layouts/left_nav'
+
 - cat = Category.where(name: "about").first
 - articles = cat.articles
 - articles.reverse.each do |item|
