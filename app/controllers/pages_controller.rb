@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     @current_page = request.env['PATH_INFO']
     @products = Product.all
     @body_bg = ["default", "first", "second"]
+    @vk_nav = [ pressa_path, classes_path, doings_path, contact_path ]
   end
 
   def index

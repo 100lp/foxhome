@@ -26,16 +26,16 @@
               Надежда Ильина
           .soc-icons
             =link_to '', '#', class: 'fb'
-            =link_to '', '#', class: 'vk'
+            =link_to '', 'https://vk.com/art_povar', class: 'vk', target: '_blank'
             
         %nav
           = render 'layouts/nav'
     %section
       #left_nav
-        - if current_page? root_path or current_page? about_path
-          = render 'layouts/left_nav'
-        - else
+        - if @vk_nav.include? @current_page
           vk_nav
+        - else
+          = render 'layouts/left_nav'
       #content
         = yield
 
