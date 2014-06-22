@@ -5,6 +5,7 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+    %script{charset: "windows-1251", src: "//vk.com/js/api/openapi.js", type: "text/javascript"}
     %script{src: "//code.jquery.com/jquery-1.9.1.js"}
     %script{src: "//code.jquery.com/ui/1.10.4/jquery-ui.js"}
     %script{src: "/gallery/js/blueimp-gallery.min.js"}
@@ -33,7 +34,7 @@
     %section
       #left_nav
         - if @vk_nav.include? @current_page
-          vk_nav
+          = render 'layouts/vk_nav'
         - else
           = render 'layouts/left_nav'
       #content
