@@ -19,18 +19,21 @@
 .cke_chrome
 	margin: 10px !important
 
-td.col-body, td.col-description
-	display: block
-	max-height: 200px !important
-	overflow: scroll
-	img
-		max-width: 200px
-		height: auto !important
+#index_table_products
+	td:nth-child(1)
+		img
+			width: 60px !important
 
-td.col-description
-	min-width: 200px
-	display: table-cell
+#index_table_articles
+	td:nth-child(2), td:nth-child(3)
+		display: block
+		max-height: 200px !important
+		overflow: auto
+		img
+			max-width: 200px
+			height: auto !important
 
-.col-image
-	img
-		width: 100px !important
+	td:nth-child(2)
+		min-width: 200px
+		display: table-cell
+

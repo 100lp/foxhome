@@ -3,6 +3,19 @@ ActiveAdmin.register Article do
 
   menu :label => "Материалы", :priority => 1
 
+  show do
+    attributes_table do
+      row "Название", :title do |article|
+        raw article.title
+      end
+      row "Описание", :description do |article|
+        raw article.description
+      end
+      row "Содержание", :body do |article|
+        raw article.body
+      end
+    end
+  end
   form do |f|
     f.inputs "Не забудьте выбрать категорию : )" do
       f.input :title, :label => "Заголовок"
@@ -19,10 +32,10 @@ ActiveAdmin.register Article do
 
   index do
     column "Название",:title
-    column :description do |article|
+    column "Описание", :description do |article|
       raw article.description
     end
-    column :body do |article|
+    column "Содержание", :body do |article|
       raw article.body
     end
     column "Категория", :category do |i|
