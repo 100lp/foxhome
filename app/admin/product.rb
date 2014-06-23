@@ -3,31 +3,32 @@ ActiveAdmin.register Product do
   # navigation_menu :category
   permit_params :image, :year, :name, :text, :category, :category_id
 
+  menu :label => "Галереи"
+
   form html: { multipart: true } do |f|
-    f.inputs "Details", multipart: true do
-      f.input :image, as: :file
-      f.input :name
-      f.input :text
-      f.input :year
-      f.input :category
+    f.inputs "Не забудьте выбрать категорию : )", multipart: true do
+      f.input :image, as: :file, :label => "Изображение"
+      f.input :name, :label => "Название"
+      f.input :text, :label => "Текст"
+      f.input :year, :label => "Год"
+      f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :label => "Категория"
     end
 
     f.actions
   end
 
   index do
-    column :image do |product|
+    column "Изображение", :image do |product|
       link_to(image_tag(product.image), admin_product_path(product))
     end
-    column :name
-    column :text
-    column :year
-    column :category
+    column "Название", :name
+    column "Текст", :text
+    column "Год", :year
+    column "Категория", :category do |i|
+      i.category.title
+    end
 
     actions
   end
 
-  # index :as => :grid do |product|
-  #   link_to(image_tag(product.image), admin_product_path(product))
-  # end
 end

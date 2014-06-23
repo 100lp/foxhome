@@ -1,5 +1,5 @@
 ActiveAdmin.setup do |config|
-
+  
   config.namespace :admin do |admin|
     admin.allow_comments = false
   end

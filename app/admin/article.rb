@@ -1,10 +1,12 @@
 ActiveAdmin.register Article do
   permit_params :title, :description, :body, :category, :category_id
 
+  menu :label => "Материалы", :priority => 1
+
   form do |f|
     f.inputs "Не забудьте выбрать категорию : )" do
-      f.input :title
-      f.input :category
+      f.input :title, :label => "Заголовок"
+      f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :label => "Категория"
     end
     f.inputs "Описание" do
       f.cktext_area :description, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'mini' }
@@ -16,14 +18,16 @@ ActiveAdmin.register Article do
   end
 
   index do
-    column :title
+    column "Название",:title
     column :description do |article|
       raw article.description
     end
     column :body do |article|
       raw article.body
     end
-
+    column "Категория", :category do |i|
+      i.category.title
+    end
     actions
   end
   

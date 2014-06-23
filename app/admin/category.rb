@@ -1,8 +1,11 @@
 ActiveAdmin.register Category do
-  permit_params :name
-  
+  permit_params :title, :name
+
+  menu :label => "Категории"
+
   index do
     column :id
+    column :title
     column :name
 
     actions
