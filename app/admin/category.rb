@@ -7,6 +7,7 @@ ActiveAdmin.register Category do
       f.input :title, :label => "Заголовок"
       f.input :name
     end
+    f.actions
   end
   index do
     column :id
