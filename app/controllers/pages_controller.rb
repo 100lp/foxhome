@@ -3,7 +3,6 @@ class PagesController < ApplicationController
 
   def help
     @current_page = request.env['PATH_INFO']
-    @products = Product.all
     @body_bg = ["default", "first", "second"]
     @vk_nav = [ pressa_path, classes_path, doings_path, contact_path ]
   end
@@ -26,7 +25,6 @@ class PagesController < ApplicationController
   def contact
   end
 
-
   def new
   end
 
@@ -40,6 +38,10 @@ class PagesController < ApplicationController
   end
 
   def homo
+  end
+
+  def show
+    
   end
 
 end

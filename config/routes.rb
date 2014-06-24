@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+
+  resources :articles
+
   root 'pages#index'
 
   # navigation
@@ -19,5 +22,6 @@ Rails.application.routes.draw do
   get '/lady', to: 'pages#lady'
   get '/homo-insectarium', to: 'pages#homo'
 
-
+  # # try to render
+  # get 'articles/*section/:id', to: 'articles#show'
 end

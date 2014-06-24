@@ -5,6 +5,9 @@ ActiveAdmin.register Article do
 
   show do
     attributes_table do
+      # row "ID", :id do |article|
+      #   raw article.id
+      # end
       row "Название", :title do |article|
         raw article.title
       end

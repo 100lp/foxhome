@@ -2,14 +2,11 @@
   #left_nav
     = render 'layouts/left_nav'
 
-- cat = Category.where(name: "about").first
-- articles = cat.articles
-- articles.reverse.each do |item|
-  %h1
-    =item.title
-  %aside
-    =raw item.description
-
-    = link_to 'ПОДРОБНЕЕ >', '#'
+- category = Category.where(name: action_name).first
+- articles = category.articles
+- articles.reverse.each do |article|
+  %h2
+    =article.title
   %article
-    =raw item.body
+    =raw article.description
+    =raw article.body
