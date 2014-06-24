@@ -23,5 +23,5 @@ Rails.application.routes.draw do
   get '/homo-insectarium', to: 'pages#homo'
 
   # # try to render
-  # get 'articles/*section/:id', to: 'articles#show'
+  # get '(*page)' => 'articles#show' 
 end
