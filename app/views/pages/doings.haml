@@ -5,4 +5,5 @@
     =article.title
   %article
     =raw article.description
-    = link_to 'ПОДРОБНЕЕ >', article_path(article.id)
+    - if !article.body.empty?
+      = link_to 'ПОДРОБНЕЕ >', article_path(article.id)

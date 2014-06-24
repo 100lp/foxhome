@@ -11,6 +11,9 @@ ActiveAdmin.register Article do
       row "Название", :title do |article|
         raw article.title
       end
+      row "Категория", :category do |article|
+        raw article.category.title
+      end
       row "Описание", :description do |article|
         raw article.description
       end

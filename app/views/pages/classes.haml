@@ -1,3 +1,5 @@
+= render 'layouts/vk_news'
+%br
 - category = Category.where(name: action_name).first
 - articles = category.articles
 - articles.reverse.each do |article|
@@ -5,5 +7,6 @@
     =article.title
   %article
     =raw article.description
-    = link_to 'ПОДРОБНЕЕ >', article_path(article.id)
-= render 'layouts/vk_news'
+    - if !article.body.empty?
+      = link_to 'ПОДРОБНЕЕ >', article_path(article.id)
+
