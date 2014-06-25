@@ -16,7 +16,9 @@ ActiveAdmin.register Product do
         raw image.year
       end
       row "Категория", :category do |image|
-        raw image.category.title
+        if !image.category.nil?
+          raw image.category.title
+        end
       end
       row "Изображение", :description do |image|
         link_to(image_tag(image.image), admin_product_path(image))
@@ -30,7 +32,7 @@ ActiveAdmin.register Product do
       f.input :name, :label => "Название"
       f.input :text, :label => "Текст"
       f.input :year, :label => "Год"
-      f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :label => "Категория"
+      f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :validate => false, :label => "Категория"
     end
 
     f.actions
@@ -44,7 +46,9 @@ ActiveAdmin.register Product do
     column "Текст", :text
     column "Год", :year
     column "Категория", :category do |i|
-      i.category.title
+      if !i.category.nil?
+        i.category.title
+      end
     end
 
     actions
