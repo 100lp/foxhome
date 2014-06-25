@@ -4,7 +4,26 @@ ActiveAdmin.register Product do
   permit_params :image, :year, :name, :text, :category, :category_id
 
   menu :label => "Галереи"
+  show do
+    attributes_table do
+      row "Название", :title do |image|
+        raw image.name
+      end
+      row "Текст", :description do |image|
+        raw image.text
+      end
+      row "Год", :description do |image|
+        raw image.year
+      end
+      row "Категория", :category do |image|
+        raw image.category.title
+      end
+      row "Изображение", :description do |image|
+        link_to(image_tag(image.image), admin_product_path(image))
+      end
 
+    end
+  end
   form html: { multipart: true } do |f|
     f.inputs "Не забудьте выбрать категорию : )", multipart: true do
       f.input :image, as: :file, :label => "Изображение"
