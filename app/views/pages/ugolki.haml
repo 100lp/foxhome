@@ -5,12 +5,4 @@
   - gallery = cat.products
   - gallery.reverse.each do |product|
     = link_to image_path(product.image) do
-      =image_tag product.image
-
-
-/ Rails.application.config.assets.precompile += %w(
-/ 	ckeditor/filebrowser/javascripts/fileuploader.js
-/ 	ckeditor/filebrowser/javascripts/jquery.endless-scroll.js
-/ 	ckeditor/filebrowser/javascripts/jquery.min.js
-/ 	ckeditor/filebrowser/javascripts/jquery.tmpl.min.js
-/ )
+      =image_tag product.mini_image

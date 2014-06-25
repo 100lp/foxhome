@@ -1,7 +1,7 @@
 ActiveAdmin.register Product do
   # belongs_to :category
   # navigation_menu :category
-  permit_params :image, :year, :name, :text, :category, :category_id
+  permit_params :image, :mini_image, :year, :name, :text, :category, :category_id
 
   menu :label => "Галереи"
   show do
@@ -20,6 +20,9 @@ ActiveAdmin.register Product do
           raw image.category.title
         end
       end
+      row "Мини изображение", :description do |image|
+        link_to(image_tag(image.mini_image), admin_product_path(image))
+      end
       row "Изображение", :description do |image|
         link_to(image_tag(image.image), admin_product_path(image))
       end
@@ -28,6 +31,7 @@ ActiveAdmin.register Product do
   end
   form html: { multipart: true } do |f|
     f.inputs "Не забудьте выбрать категорию : )", multipart: true do
+      f.input :mini_image, as: :file, :label => "Мини изображение"
       f.input :image, as: :file, :label => "Изображение"
       f.input :name, :label => "Название"
       f.input :text, :label => "Текст"
@@ -39,8 +43,8 @@ ActiveAdmin.register Product do
   end
 
   index do
-    column "Изображение", :image do |product|
-      link_to(image_tag(product.image), admin_product_path(product))
+    column "Изображение", :mini_image do |product|
+      link_to(image_tag(product.mini_image), admin_product_path(product))
     end
     column "Название", :name
     column "Текст", :text
