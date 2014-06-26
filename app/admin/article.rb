@@ -26,7 +26,7 @@ ActiveAdmin.register Article do
   end
   form do |f|
     f.inputs "Не забудьте выбрать категорию : )" do
-      f.input :title, :label => "Заголовок"
+      f.input :title, as: :string, :label => "Заголовок"
       f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :label => "Категория"
     end
     f.inputs "Описание" do
