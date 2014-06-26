@@ -1,3 +1,19 @@
+jQuery(document).ready ->
+  $("h1").text "test to go?"
+  return
+
+
+jQuery(document).ready ->
+  setTimeout (->
+    $("body").addClass "frame1"
+    return
+  ), 2000
+  setTimeout (->
+    $("body").addClass "frame2"
+    return
+  ), 4000
+  return
+
 $ ->
   return unless $("#links").length
   
