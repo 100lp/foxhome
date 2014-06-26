@@ -1,5 +1,7 @@
 require 'bundler/capistrano'
 
+load 'deploy/assets'
+
 server '188.93.19.195', :app, :web, :db, primary: true
 set :deploy_to, '/var/www/art-povar.ru/public_html'
 set :user, 'root'
@@ -21,7 +23,7 @@ namespace :deploy do
   end
 end
 
-after 'deploy:update_code', 'deploy:symlink_db'
+before 'deploy:assets:precompile', 'deploy:symlink_db'
 
 namespace :deploy do
   desc "Symlinks the database.yml"

@@ -15,3 +15,8 @@
 //= require pages
 //= require ckeditor/init
 //= require_tree .
+
+jQuery(document).ready(function(){
+	$("h1").text("test to go?")
+});
+	
