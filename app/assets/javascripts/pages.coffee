@@ -1,11 +1,6 @@
 $ ->
-  jQuery.fn.topLink = (settings) ->
-    settings = jQuery.extend(
-      min: 1
-      fadeSpeed: 200
-      ieOffset: 50
-    , settings)
-
+  return unless $("#links").length
+  
   document.getElementById("links").onclick = (event) ->
     controlsClass: 'blueimp-gallery-controls'
     toggleControlsOnReturn: false

@@ -17,6 +17,7 @@
 //= require_tree .
 
 jQuery(document).ready(function(){
-	$("h1").text("test to go?")
+	$("h1").text("test to go?");
+	console.log("SU");
 });
 	

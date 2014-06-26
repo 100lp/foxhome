@@ -12,7 +12,9 @@ ActiveAdmin.register Article do
         raw article.title
       end
       row "Категория", :category do |article|
-        raw article.category.title
+        if !article.category.nil?
+          raw article.category.title
+        end
       end
       row "Описание", :description do |article|
         raw article.description
@@ -45,7 +47,9 @@ ActiveAdmin.register Article do
       raw article.body
     end
     column "Категория", :category do |i|
-      i.category.title
+      if !i.category.nil?
+        i.category.title
+      end
     end
     actions
   end
