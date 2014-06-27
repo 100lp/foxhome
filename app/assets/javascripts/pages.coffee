@@ -33,13 +33,14 @@ $ ->
 
       i = 0  if i is images.length
       return
-    ), 6000
+    ), 5000
     return
 
   if $('body').hasClass('index')
     $('body').prepend("<b></b>")
     $('b').addClass('default')
     return
+
 
   # setInterval (->
   #   setTimeout (->
@@ -103,4 +104,6 @@ $ ->
 
     links = @getElementsByTagName("a")
     blueimp.Gallery links, options
+
     return
+
