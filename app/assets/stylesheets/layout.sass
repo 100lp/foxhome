@@ -13,25 +13,19 @@ body
   font-family: Arial
   position: relative
 
-  &.index
-    &:after
-      content: ""
-      display: block
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
-      z-index: -1
-      background: url(image_path("background_01.jpg")) center 160px no-repeat
+  b
+    display: block
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    z-index: -999
 
-  &.index.first
-    &:after
-      background: url(image_path("background_02.jpg")) center 160px no-repeat
+  b.default
+    min-height: 600px
+    background: url(image_path("background_01.jpg")) center 180px no-repeat #000c25
 
-  &.index.second
-    &:after
-      background: url(image_path("background_03.jpg")) center 150px no-repeat
 
 ul
   padding: 0
@@ -123,7 +117,6 @@ section
     padding: 0
     position: relative
 
-    .index
 
 footer
   padding: 0 125px

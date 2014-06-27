@@ -11,7 +11,8 @@
     %script{src: "http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"}
     %link{href: "http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css", rel: "stylesheet"}
 
-  %body{class: "#{action_name} #{@body_bg.sample}"}
+  %body{class: "#{action_name}"}
+    / #b-after
     %header
       = link_to '', '/', class: 'logo'
       %aside
