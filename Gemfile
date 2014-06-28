@@ -20,8 +20,6 @@ gem 'kaminari'
 
 gem 'pg'
 
-gem 'rails_12factor'
-
 gem 'rake'
 
 gem 'haml'
