@@ -5,19 +5,6 @@
   h3, a, ol
     display: block
 
-  .close
-    padding: 15px
-    right: 15px
-    left: auto
-    margin: -15px
-    font-size: 30px
-    text-decoration: none
-    cursor: pointer
-    position: absolute
-    top: 15px
-    line-height: 30px
-    color: white
-    z-index: 999
 
 body
   padding: 0
@@ -26,6 +13,21 @@ body
   color: white
   font-family: Arial
   position: relative
+
+  .fancybox-skin
+    background: none
+  .fancybox-close
+    opacity: 0.5
+    top: 0
+    right: 0
+
+    &:hover
+      opacity: 1
+
+  .fancybox-next span
+    right: 0
+  .fancybox-prev span
+    left: 0
 
   b
     display: block

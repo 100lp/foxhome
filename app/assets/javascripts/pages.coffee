@@ -1,16 +1,3 @@
-
-# jQuery(document).ready ->
-#   setTimeout (->
-#     $("body").addClass "first"
-      
-#     return
-#     ), 2000
-
-  # setTimeout (->
-  #   $("body").removeClass("first").addClass "second"
-  #   return
-  #   ), 2000
-
 $ ->
   $(window).load ->
     i = 0
@@ -42,68 +29,40 @@ $ ->
     return
 
 
-  # setInterval (->
-  #   setTimeout (->
-  #     $("#b-after").attr('class', "default")
-  #     setTimeout (->
-  #       $("#b-after").attr('class', "first")
-  #       setTimeout (->
-  #         $("#b-after").attr('class', "second")
-  #       ), 2000
-  #     ), 2000
-  #   ), 2000
-  # ), 6000
+  (($, F) ->
+    F.transitions.resizeIn = ->
+      previous = F.previous
+      current = F.current
+      startPos = previous.wrap.stop(true).position()
+      endPos = $.extend(
+        opacity: 1
+      , current.pos)
+      startPos.width = previous.wrap.width()
+      startPos.height = previous.wrap.height()
+      previous.wrap.stop(true).trigger("onReset").remove()
+      delete endPos.position
 
-  # setInterval (->
-  #   setTimeout (->
-  #     if $("body").length   
-  #       $("body").attr('class', "first")
-  #       if $("body").hasClass("first")
-  #        setTimeout (->
-  #          $("body").attr('class', "second")
-  #          if $("body").hasClass("second")
-  #            setTimeout (->
-  #              $("body").attr('class', "third")
-  #              if $("body").hasClass("second")
-  #               setTimeout (->
-  #                 $("body").attr('class', "third")
-  #                 return
-  #                ), 2000
-  #              return
-  #            ), 2000
-  #          return
-  #        ), 2000
-  #     return
-  #   ), 2000
-  # ), 4000
+      current.inner.hide()
+      current.wrap.css(startPos).animate endPos,
+        duration: current.nextSpeed
+        easing: current.nextEasing
+        step: F.transitions.step
+        complete: ->
+          F._afterZoomIn()
+          current.inner.fadeIn(750)
+          return
 
-  # setInterval (->
-  #   setTimeout (->
-  #     setTimeout (->
-  #       setTimeout (->
-  #         console.log "3"
-  #       ), 300
-  #       console.log "1"
-  #     ), 300
-
-  #   console.log("2")
-  #   ), 300
-  # ), 1000
-
-  return unless $("#links").length
-  
-  document.getElementById("links").onclick = (event) ->
-    controlsClass: 'blueimp-gallery-controls'
-    toggleControlsOnReturn: false
-    event = event or window.event
-    target = event.target or event.srcElement
-    link = (if target.src then target.parentNode else target)
-    options =
-      index: link
-      event: event
-
-    links = @getElementsByTagName("a")
-    blueimp.Gallery links, options
+      return
 
     return
+  ) jQuery, jQuery.fancybox
+
+  $(".fancybox").attr("rel", "gallery").fancybox
+    padding: 0
+    nextMethod: "resizeIn"
+    nextSpeed: 50
+    prevMethod: false
+    helpers:
+      title:
+        type: "inside"
 
