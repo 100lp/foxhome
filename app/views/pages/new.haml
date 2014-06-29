@@ -1,6 +1,1 @@
-.gallery
-  - cat = Category.where(name: "new").first
-  - gallery = cat.products
-  - gallery.reverse.each do |product|
-    = link_to image_path(product.image), class: 'fancybox', rel: "gallery1" do
-      =image_tag product.mini_image
+= render 'layouts/gallery'
