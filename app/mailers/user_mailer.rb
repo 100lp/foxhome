@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "notifications@art-povar.ru"
+  default from: "noreply@gurme.ru"
+  default :to => "spb.gurme@gmail.com"
 
-  def welcome_email(user)
-  	@user = user
-  	@url = "localhost:3000/mail"
-  	mail(to: @user.email, subject: 'Welcome to ART GALLERY')
+  def new_message(message)
+  	@message = message
+  	mail(subject: "#{message.subject}")
   end
 end

@@ -24,6 +24,11 @@ Rails.application.routes.draw do
   get '/lady', to: 'pages#lady'
   get '/homo-insectarium', to: 'pages#homo'
 
+  # обратная связь
+  # post '/message' => 'pages#message'
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+
   # # try to render
   # get '(*page)' => 'articles#show' 
 end
