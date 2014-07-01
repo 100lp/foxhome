@@ -63,6 +63,8 @@ $ ->
     nextSpeed: 50
     prevMethod: false
     helpers:
+      alt:
+        type: "inside"
       title:
         type: "inside"
 
