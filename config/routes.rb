@@ -9,13 +9,16 @@ Rails.application.routes.draw do
   end
 
   root 'pages#index'
-
+  # обратная связь
+  get 'contact' => 'contact#new', :as => 'contact'
+  post 'contact' => 'contact#create'
+  
   # navigation
   get '/about', to: 'pages#about'
   get '/pressa', to: 'pages#pressa'
   get '/classes', to: 'pages#classes'
   get '/doings', to: 'pages#doings'
-  get '/contact', to: 'pages#contact'
+  get '/contacts', to: 'pages#contacts'
 
   # left navigation
   get '/new', to: 'pages#new'
@@ -24,10 +27,7 @@ Rails.application.routes.draw do
   get '/lady', to: 'pages#lady'
   get '/homo-insectarium', to: 'pages#homo'
 
-  # обратная связь
-  # post '/message' => 'pages#message'
-  match 'contact' => 'contact#new', :as => 'contact', :via => :get
-  match 'contact' => 'contact#create', :as => 'contact', :via => :post
+  
 
   # # try to render
   # get '(*page)' => 'articles#show' 
