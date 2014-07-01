@@ -10,8 +10,8 @@ Rails.application.routes.draw do
 
   root 'pages#index'
   # обратная связь
-  get 'contact' => 'contact#new', :as => 'contact'
-  post 'contact' => 'contact#create'
+  # get 'contact' => 'contact#new', :as => 'contact'
+  # post 'contact' => 'contact#create'
   
   # navigation
   get '/about', to: 'pages#about'

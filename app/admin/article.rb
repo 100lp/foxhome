@@ -30,10 +30,10 @@ ActiveAdmin.register Article do
       f.input :category, :as => :select, :collection => Category.all.map {|c| [c.title, c.id]}, :label => "Категория"
     end
     f.inputs "Описание" do
-      f.cktext_area :description, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'mini' }
+      f.cktext_area :description, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'Full' }
     end
     f.inputs "Весь материал" do
-      f.cktext_area :body, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'mini' }
+      f.cktext_area :body, :ckeditor => { :uiColor => '#FFF07B', toolbar: 'Full' }
     end
     f.actions
   end
