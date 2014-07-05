@@ -1,5 +1,7 @@
 ActiveAdmin.setup do |config|
-  
+  # config.namespace :admin do |ns|
+  #   ns.authorization_adapter = "AdminAuthorization"
+  # end
   config.namespace :admin do |admin|
     admin.allow_comments = false
   end
@@ -150,7 +152,7 @@ ActiveAdmin.setup do |config|
 
   # == Setting a Favicon
   #
-  # config.favicon = '/assets/favicon.ico'
+  config.favicon = '/assets/favicon.ico'
 
 
   # == Removing Breadcrumbs
