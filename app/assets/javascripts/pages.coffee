@@ -62,6 +62,9 @@ $ ->
     nextMethod: "resizeIn"
     nextSpeed: 50
     prevMethod: false
+    afterLoad: ->
+      @title = @title + '<br />' + $(@element).data("caption")
+      return
     helpers:
       alt:
         type: "inside"
