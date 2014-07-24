@@ -23,15 +23,15 @@ module Artpovar
     config.action_mailer.smtp_settings = {
       :address              => "smtp.gmail.com",
       :port                 => 587,
-      :domain               => "http://art-povar.ru/",
+      :domain               => "",
       :user_name            => "spb.gurme@gmail.com",
-      :password             => "25neparol",
+      :password             => "",
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
 
     config.action_mailer.default_url_options = {
-      :host => "http://art-povar.ru/"
+      :host => ""
     }
 
   end

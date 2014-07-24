@@ -2,14 +2,14 @@ require 'bundler/capistrano'
 
 load 'deploy/assets'
 
-server '188.93.19.195', :app, :web, :db, primary: true
-set :deploy_to, '/var/www/art-povar.ru/public_html'
+server '', :app, :web, :db, primary: true
+set :deploy_to, '/var/www/foxhome/public_html'
 set :user, 'root'
 set :use_sudo, false
 ssh_options[:forward_agent] = true
 
 set :deploy_via, :remote_cache
-set :repository,  "https://github.com/100lp/artpovar.git"
+set :repository,  "git@github.com:100lp/foxhome.git"
 set :scm, :git
 
 set :normalize_asset_timestamps, false
