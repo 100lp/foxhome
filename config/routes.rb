@@ -9,9 +9,14 @@ Rails.application.routes.draw do
   end
 
   root 'pages#index'
+  # обратная связь
+  # get 'contact' => 'contact#new', :as => 'contact'
+  # post 'contact' => 'contact#create'
   
   # navigation
   get '/about', to: 'pages#about'
+  get '/new', to: 'pages#new'
+  get '/pressa', to: 'pages#pressa'
   get '/contacts', to: 'pages#contacts'
 
   # left navigation
