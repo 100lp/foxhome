@@ -45,7 +45,6 @@ body
     min-height: 600px
     background: url(image_path("background_01.jpg")) center 180px no-repeat #000c25
 
-
 ul
   padding: 0
   margin: 0
@@ -58,6 +57,37 @@ a
 h2
   font-size: 16px
 
+nav
+  background: #ccc
+  text-align: center
+  overflow: hidden
+  width: 980px
+  margin: 0 auto
+
+  ul
+    margin: 0
+    overflow: hidden
+
+    li
+      float: left
+      margin: 0 10px
+      font-size: 14px
+
+      &:hover
+        background: #bbb
+
+      &.current
+        a, a:link, a:visited
+          color: #000
+
+      a, a:link, a:visited
+        text-decoration: none
+        color: white
+        padding: 20px
+        display: block
+
+        &:hover, &:focus
+          color: #555
 section
   padding: 25px 40px
   box-sizing: border-box

@@ -12,31 +12,13 @@ class PagesController < ApplicationController
   def about
   end
 
-  def pressa
+  def interiors
   end
   
-  def classes
-  end
-
-  def doings
+  def grafika
   end
 
   def contacts
-  end
-
-  def new
-  end
-
-  def ugolki
-  end
-
-  def sozvezdie
-  end
-  
-  def lady
-  end
-
-  def homo
   end
 
   def show

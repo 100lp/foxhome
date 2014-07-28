@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   
   # navigation
   get '/about', to: 'pages#about'
-  get '/new', to: 'pages#new'
-  get '/pressa', to: 'pages#pressa'
+  get '/interiors', to: 'pages#interiors'
+  get '/grafika', to: 'pages#grafika'
   get '/contacts', to: 'pages#contacts'
 
   # left navigation

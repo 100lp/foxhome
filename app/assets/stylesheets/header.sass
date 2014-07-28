@@ -4,6 +4,7 @@ header
   margin: 0 auto
   overflow: hidden
   box-sizing: border-box
+  background: gray
 
   .logo
     float: left
@@ -11,7 +12,6 @@ header
     height: 106px
     max-width: 180px
     min-width: 170px
-    background: url(image_path("logo.png")) left no-repeat
 
     &:hover
       opacity: 0.9
@@ -59,27 +59,3 @@ header
           background: url(image_path("icons.png")) left no-repeat
         .vk
           background: url(image_path("icons.png")) right no-repeat
-        
-  nav
-    text-align: center
-    overflow: hidden
-    margin-top: 16px
-
-    ul
-      margin: 0
-
-      li
-        float: left
-        margin: 0 10px
-        font-size: 14px
-
-        &.current
-          a, a:link, a:visited
-            color: #739fbe
-
-        a, a:link, a:visited
-          text-decoration: none
-          color: white
-
-          &:hover, &:focus
-            color: #739fbe
