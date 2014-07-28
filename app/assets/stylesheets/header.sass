@@ -1,10 +1,8 @@
 header
-  width: 980px
-  padding: 45px 20px 0 20px
-  margin: 0 auto
-  overflow: hidden
-  box-sizing: border-box
-  background: #333
+  background: #111
+
+  .centered
+    padding: 45px 50px 0 50px
 
   #left, #middle, #right
     overflow: hidden
@@ -13,9 +11,29 @@ header
 
   #left
     width: 25%
+
     .soc-icons
-      height: 100px
-      background: url(image_path("icons.png")) no-repeat
+      text-align: left
+      
+      a
+        height: 37px
+        width: 37px
+        margin-right: 10px
+        display: inline-block
+        background: url(image_path("icons.png")) top left no-repeat
+
+        &:last-child
+          margin-right: 0
+
+        &.fb
+          background-position: -37px 0
+        &.in
+          background-position: -74px 0
+        &.tw
+          background-position: right top
+
+        &:hover
+          opacity: 0.6
 
   #middle
     width: 49%
@@ -27,24 +45,41 @@ header
       display: block
       margin: 0 auto
       background: url(image_path("logo.png")) no-repeat
-      background-position: left 4px center
+      // background-position: left 4px center
 
       &:hover
         opacity: 0.9
 
   #right
-    width: 25%
+    width: 24%
     text-align: right
+    font-family: "PF Din TextCondPro Thin"
+    font-size: 20px
+    font-weight: bold
+    letter-spacing: 1px
+
+    .telefon
+      
+    .language
+
 
   nav
-    width: 472px
     background: none
-    margin: 45px auto 30px auto
+    margin: 15px auto 0 auto
+    font-family: "PF Din TextCondPro Light"
+    font-size: 30px
+    width: 100%
+
+    img
+      vertical-align: middle
+      margin-bottom: 6px
 
     a, a:link, a:visited
       text-decoration: none
       color: white
       padding: 30px
+      display: inline-block
+      vertical-align: middle
 
       &:hover, &:focus
         color: #555

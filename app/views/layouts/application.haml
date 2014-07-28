@@ -9,27 +9,34 @@
 
   %body{class: "#{action_name}"}
     %header
-      #left
-        .soc-icons
-          =link_to '', '#', class: 'fb', target: '_blank'
-          =link_to '', '#', class: 'vk', target: '_blank'
-      #middle
-        = link_to '', '/', class: 'logo'
-      #right
-        .telefon
-          (812) 996-58-72
-        .language
-          RUS ENG
-      %nav
-        = render 'layouts/main_nav'
+      .centered
+
+        #left
+          = render 'layouts/icons'
           
+        #middle
+          = link_to '', '/', class: 'logo'
+
+        #right
+          .telefon
+            (812) 996-58-72
+          .language
+            РУС ENG
+
+        %nav
+          = render 'layouts/main_nav'
+  
     %nav
-      = render 'layouts/nav'
+      .centered
+        = render 'layouts/nav'
+
     %section
-      #left_nav
-        future left nav
-      #content
-        = yield
+      .centered
+
+        #left_nav
+          future left nav
+        #content
+          = yield
 
     %footer
       %p
