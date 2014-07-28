@@ -1,36 +1,11 @@
 body
   padding: 0
   margin: 0
-  background-color: #000c25
+  background-color: #FFF4C2
+  // background: url(image_path("background.jpg")) no-repeat
   color: white
   font-family: Arial
   position: relative
-
-  .fancybox-skin
-    background: none
-  .fancybox-close
-    opacity: 0.5
-    top: 0
-    right: 0
-
-    &:hover
-      opacity: 1
-
-  .fancybox-next span
-    right: 0
-  .fancybox-prev span
-    left: 0
-  .fancybox-overlay
-    background: rgba(0, 0, 28, 0.8)
-
-  .fancybox-opened, .fancybox-skin
-    box-shadow: none !important
-
-  .fancybox-title
-    font-size: 14px
-    text-align: right
-    color: white
-    white-space: pre
 
   b
     display: block
@@ -40,10 +15,6 @@ body
     top: 0
     left: 0
     z-index: -999
-
-  b.default
-    min-height: 600px
-    background: url(image_path("background_01.jpg")) center 180px no-repeat #000c25
 
 ul
   padding: 0
@@ -59,6 +30,7 @@ h2
 
 nav
   background: #ccc
+  background-color: rgba(0, 0, 0, 0.3)
   text-align: center
   overflow: hidden
   width: 980px
@@ -70,20 +42,22 @@ nav
 
     li
       float: left
-      margin: 0 10px
+      margin: 0
       font-size: 14px
 
       &:hover
         background: #bbb
 
       &.current
+        background: #444
+
         a, a:link, a:visited
-          color: #000
+          color: #fff
 
       a, a:link, a:visited
         text-decoration: none
         color: white
-        padding: 20px
+        padding: 27.5px
         display: block
 
         &:hover, &:focus
@@ -94,70 +68,6 @@ section
   min-height: 550px
   width: 980px
   margin: 0 auto
-
-  #left_nav
-    float: left
-    width: 160px
-    margin-right: 30px
-
-    ul
-      width: 160px
-
-    a
-      height: 80px
-      width: 80px
-      display: block
-      margin-left: 80px
-      margin-bottom: 15px
-      font-size: 12px
-      position: relative
-
-      li
-        display: table-cell
-        vertical-align: middle
-        height: 80px
-        padding-left: 5px
-
-      &:before
-        height: 80px
-        width: 90px
-        opacity: 0.7
-        left: -80px
-        position: absolute
-        content: ""
-
-      &:first-child
-        &:before
-          background: url(image_path("new.png")) no-repeat
-
-      &:nth-child(2)
-        &:before
-          background: url(image_path("ugolki.png")) no-repeat
-      &:nth-child(3)
-        &:before
-          background: url(image_path("sozvezdie.png")) no-repeat
-      &:nth-child(4)
-        &:before
-          background: url(image_path("lady.png")) no-repeat
-      &:last-child
-        &:before
-          background: url(image_path("homo.png")) no-repeat
-
-      &.current
-        &:before
-          opacity: 1
-        &:link, &:visited
-          color: #739fbe
-
-      &:link, &:visited
-        text-decoration: none
-        color: white
-
-      &:hover, &:focus
-        color: #739fbe
-
-        &:before
-          opacity: 1
 
   #content
     float: left

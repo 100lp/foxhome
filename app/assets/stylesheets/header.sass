@@ -1,61 +1,50 @@
 header
   width: 980px
-  padding: 50px 40px 20px
+  padding: 45px 20px 0 20px
   margin: 0 auto
   overflow: hidden
   box-sizing: border-box
-  background: gray
+  background: #333
 
-  .logo
-    float: left
-    width: 20%
-    height: 106px
-    max-width: 180px
-    min-width: 170px
+  #left, #middle, #right
+    overflow: hidden
+    display: inline-block
+    vertical-align: top
 
-    &:hover
-      opacity: 0.9
+  #left
+    width: 25%
+    .soc-icons
+      height: 100px
+      background: url(image_path("icons.png")) no-repeat
 
-  aside
-    float: right
-    width: 80%
+  #middle
+    width: 49%
+    height: 264px
 
-    #info
-      overflow: hidden
-      box-sizing: border-box
+    .logo
+      height: 264px
+      width: 272px
+      display: block
+      margin: 0 auto
+      background: url(image_path("logo.png")) no-repeat
+      background-position: left 4px center
 
-      .title
-        text-align: center
-        float: left
-        width: 80%
-        font-size: 18px
-        font-family: Myriad Pro, Arial
+      &:hover
+        opacity: 0.9
 
-        span
-          font-size: 16px
+  #right
+    width: 25%
+    text-align: right
 
-        h1
-          margin: 5px 0 0
-          font-size: 22px
-          font-weight: normal
-          color: white
+  nav
+    width: 472px
+    background: none
+    margin: 45px auto 30px auto
 
-      .soc-icons
-        float: right
-        width: 20%
-        max-width: 150px
-        margin-top: 15px
+    a, a:link, a:visited
+      text-decoration: none
+      color: white
+      padding: 30px
 
-        .vk, .fb
-          height: 44px
-          width: 42px
-          text-align: center
-          display: inline-block
-
-          &:hover
-            opacity: 0.8
-
-        .fb
-          background: url(image_path("icons.png")) left no-repeat
-        .vk
-          background: url(image_path("icons.png")) right no-repeat
+      &:hover, &:focus
+        color: #555

@@ -9,20 +9,20 @@
 
   %body{class: "#{action_name}"}
     %header
-      = link_to '', '/', class: 'logo'
-      %aside
-        #info
-          .title
-            Fox Home Studio
-            %br
-            %span
-              студия дизайна
-            %br
-            %h1
-              Артема Малахова
-          .soc-icons
-            =link_to '', '#', class: 'fb', target: '_blank'
-            =link_to '', '#', class: 'vk', target: '_blank'
+      #left
+        .soc-icons
+          =link_to '', '#', class: 'fb', target: '_blank'
+          =link_to '', '#', class: 'vk', target: '_blank'
+      #middle
+        = link_to '', '/', class: 'logo'
+      #right
+        .telefon
+          (812) 996-58-72
+        .language
+          RUS ENG
+      %nav
+        = render 'layouts/main_nav'
+          
     %nav
       = render 'layouts/nav'
     %section
