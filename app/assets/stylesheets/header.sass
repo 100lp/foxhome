@@ -45,7 +45,7 @@ header
       display: block
       margin: 0 auto
       background: url(image_path("logo.png")) no-repeat
-      // background-position: left 4px center
+      background-position: left 4px center
 
       &:hover
         opacity: 0.9
@@ -61,7 +61,11 @@ header
     .telefon
       
     .language
+      a
+        color: #555
 
+        &.active
+          color: white
 
   nav
     background: none
@@ -74,12 +78,15 @@ header
       vertical-align: middle
       margin-bottom: 6px
 
-    a, a:link, a:visited
+    a, a:link, a:visited, .language
       text-decoration: none
-      color: white
+      color: #555
       padding: 30px
       display: inline-block
       vertical-align: middle
 
+      &.current
+        color: white
+
       &:hover, &:focus
-        color: #555
+        color: white
